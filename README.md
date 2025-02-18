@@ -6,6 +6,10 @@ This project is designed to parse Excel shift schedules, generate the shift info
 手机上配置了CalDav服务后，就可以直接在日历中看到排班信息，方便日常工作。
 
 ## 部署CalDav服务
+我使用的是radicale作为CalDav服务
+
+可以通过`apt install radicale`安装，也可以使用pip安装
+
 配置文件 `/root/.config/radicale/config`
 ```
 [server]
