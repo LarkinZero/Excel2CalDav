@@ -38,12 +38,12 @@ class CustomClient(CaldavClient):
 
 
 if __name__ == "__main__":
-    tag = '20250204'
-    client = CaldavClient(url=config.caldav_url, username=config.username, password=config.password)
+    tag = '20250219'
+    client = CustomClient(url=config.caldav_url, username=config.username, password=config.password)
     calendar = {}
     calendar = make_event.generate_calendar_workdays(calendar,'./example/25年2月服务窗口排班表.xlsx')
     calendar = make_event.generate_calendar_holidays(calendar, './example/25年2月节假日排班表.xlsx')
-    calendar = make_event.filter_calendar_by_month(calendar, 3)
+    calendar = make_event.filter_calendar_by_month(calendar, 2)
     calendar = make_event.makeWeekend(calendar)
     print(json.dumps(calendar, indent=4, ensure_ascii=False))
     client.create_event(calendar, tag)
